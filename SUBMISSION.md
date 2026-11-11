@@ -43,8 +43,8 @@ API documentation: http://127.0.0.1:8000/docs
 
 | User | Email |
 |---|---|
-| Alice | alice@ajaia.test |
-| Bob | bob@ajaia.test |
+| Jyothi | alice@ajaia.test |
+| Pavan | bob@ajaia.test |
 
 The demo uses simulated identity headers. No passwords are required.
 
