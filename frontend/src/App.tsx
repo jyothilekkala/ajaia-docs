@@ -30,8 +30,8 @@ type Doc = {
 };
 
 function displayName(email: string) {
-  if (email === USERS[0]) return "Alice";
-  if (email === USERS[1]) return "Bob";
+  if (email === USERS[0]) return "Jyothi";
+  if (email === USERS[1]) return "Pavan";
   return email;
 }
 
@@ -212,7 +212,7 @@ export default function App() {
     const defaultEmail = user === USERS[0] ? USERS[1] : USERS[0];
 
     const email = window.prompt(
-      "Enter the email address of the person you want to share this document with (Alice or Bob):",
+      "Enter the email address of the person you want to share this document with (Jyothi or Pavan):",
       defaultEmail
     );
 
