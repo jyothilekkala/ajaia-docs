@@ -1,85 +1,117 @@
-
-# Ajaia Docs — Submission Guide
+# Ajaia Docs – Submission
 
 ## Project Overview
 
-Ajaia Docs is a lightweight collaborative document editor built using React, TypeScript, FastAPI, and SQLite.
+Ajaia Docs is a lightweight document management application that allows users to create, edit, format, save, reopen, and share documents.
 
-The application supports document creation, rich-text editing, persistent storage, file imports, and document sharing between demo users.
+## Application Links
 
-## Key Features
-
-- Create, rename, edit, and save documents.
-- Rich-text formatting using TipTap.
-- Import TXT and Markdown files.
-- Share documents between Alice and Bob.
-- View owned and shared documents separately.
-- Edit shared documents.
-- Persistent storage using SQLite.
-
-## Technology Stack
-
-- React
-- TypeScript
-- Vite
-- TipTap
-- Python
-- FastAPI
-- SQLAlchemy
-- SQLite
-- pytest
-
-## Running the Application
-
-Refer to `README.md` for complete setup instructions.
-
-Frontend: http://localhost:5173
-
-Backend API: http://127.0.0.1:8000
-
-API documentation: http://127.0.0.1:8000/docs
+- **Live Application:** https://ajaia-docs-taupe-iota.vercel.app/
+- **Backend API:** https://ajaia-docs-api-z4l9.onrender.com/
+- **GitHub Repository:** https://github.com/jyothilekkala/ajaia-docs
+- **Demo Video:** [Add your Zoom recording's YouTube URL here]
 
 ## Demo Accounts
 
-| User | Email |
+The application includes two demo users:
+
+| Display Name | Login Email |
 |---|---|
 | Jyothi | alice@ajaia.test |
 | Pavan | bob@ajaia.test |
 
-The demo uses simulated identity headers. No passwords are required.
+Use these accounts to demonstrate document ownership and sharing.
 
-## Automated Testing
+## Features Implemented
 
-Run the backend tests from the backend directory:
+- Create and manage documents.
+- Rename existing documents.
+- Rich-text editing with bold, italic, underline, and headings.
+- Bulleted and numbered lists.
+- Save documents and reopen them.
+- Import TXT and Markdown files.
+- Share documents with another user.
+- Distinguish owned documents from shared documents.
+- Persist documents across page refreshes.
+
+## Technology Stack
+
+**Frontend**
+- React
+- TypeScript
+- Vite
+- TipTap rich-text editor
+
+**Backend**
+- Python
+- FastAPI
+- SQLAlchemy
+
+**Database**
+- SQLite for local development
+- Neon PostgreSQL for deployed application
+
+**Deployment**
+- Vercel – Frontend
+- Render – Backend
+
+## Running Locally
+
+### Backend
 
 ```bash
-pytest -v
+cd backend
+
+python -m venv venv
+
+# Windows:
+venv\Scripts\activate
+
+# Linux / WSL:
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+python -m uvicorn main:app --reload
 ```
 
-Latest validation: **15 tests passed.**
+Backend API documentation:
 
-Tests use an isolated in-memory SQLite database.
+http://127.0.0.1:8000/docs
 
-## Documentation
+### Frontend
 
-- `README.md` — Setup, installation, and usage.
-- `ARCHITECTURE.md` — System architecture and design.
-- `AI_WORKFLOW.md` — AI-assisted development workflow.
-- `SUBMISSION.md` — Submission and reviewer guide.
+Open another terminal:
 
-## Known Limitations
+```bash
+cd frontend
 
-- Authentication is simulated for demonstration purposes.
-- Real-time collaborative editing is not implemented.
-- Shared users currently have editing access.
-- Document history and version restoration are not implemented.
+npm install
 
-## Deliverables
+npm run dev
+```
 
-- Application source code.
-- Backend automated tests.
-- Architecture documentation.
-- AI workflow documentation.
-- Setup and submission instructions.
-- Application walkthrough video and screenshots (to be added).
-- Live application URL (to be added, if deployment is completed).
+Open:
+
+http://localhost:5173/
+
+## Validation and Testing
+
+- Backend automated tests: **15 passed**
+- Frontend production build: `npm run build` completed successfully.
+- Tested document creation, editing, persistence, and sharing workflows.
+
+## Architecture
+
+The React frontend communicates with the FastAPI backend through REST API endpoints. The backend uses SQLAlchemy to interact with the database. The deployed application uses Neon PostgreSQL for persistent storage.
+
+## AI Workflow
+
+AI assistance was used during development for implementation guidance, debugging, test development, documentation, and troubleshooting.
+
+The development process included reviewing generated suggestions, integrating relevant changes, running automated tests, and validating the frontend production build.
+
+## Known Scope Limitations
+
+This project focuses on core document management and sharing functionality. It does not implement real-time collaborative editing or simultaneous live cursor updates.
+
